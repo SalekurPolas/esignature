@@ -1,6 +1,6 @@
 {
   "name": "v-signature",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "take on-screen virtual signature",
   "type": "module",
   "main": "index.js",
