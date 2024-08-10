@@ -1,3 +1,3 @@
-import esignature from './index.js';
+import signature from './index.js';
 
-console.log(esignature);
+console.log(signature);

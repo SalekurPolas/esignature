@@ -1,13 +1,13 @@
-# esignature
+# v-signature
 
-`esignature` is a JavaScript library for capturing and managing digital signatures on an HTML canvas. It provides functionality to draw, clear, save, and configure signature settings.
+`v-signature` is a JavaScript library for capturing and managing digital signatures on an HTML canvas. It provides functionality to draw, clear, save, and configure signature settings.
 
 ## Installation
 
-You can install `esignature` via npm.
+You can install `v-signature` via npm.
 
 ```bash
-npm install esignature
+npm install v-signature
 ```
 
 
@@ -15,19 +15,19 @@ npm install esignature
 
 ### For ES Modules
 
-If your project uses ES Modules, you can import `esignature` into your JavaScript files.
+If your project uses ES Modules, you can import `v-signature` into your JavaScript files.
 
 ```javascript
-import esignature from 'esignature';
+import signature from 'v-signature';
 ```
 
 
 ### For CommonJS
 
-If your project uses CommonJS, you can require `esignature` in your JavaScript files.
+If your project uses CommonJS, you can require `v-signature` in your JavaScript files.
 
 ```javascript
-const esignature = require('esignature');
+const signature = require('v-signature');
 ```
 
 
@@ -40,25 +40,25 @@ const esignature = require('esignature');
     Make sure to have an HTML input element for storing the signature data and optionally buttons for clearing and saving.
 
     ```html
-    <input type="hidden" class="esignature">
+    <input type="hidden" class="signature">
     ```
 
 
-2. **Initialize esignature**
+2. **Initialize signature**
 
-    Initialize the `esignature` class by specifying the selectors for the input, canvas, clear button, and save button. You can also provide options to configure the appearance and behavior of the signature canvas.
+    Initialize the `signature` class by specifying the selectors for the input, canvas, clear button, and save button. You can also provide options to configure the appearance and behavior of the signature canvas.
 
     ```javascript
-    const signature = new esignature('esignature');
+    const signature = new signature('signature');
     ```
 
 
 ### Options
 
-You can customize the appearance and behavior of the signature canvas through the `options` parameter when initializing the `esignature` class. This allows you to adjust properties such as width, height, color, line width, background color, border, and border radius.
+You can customize the appearance and behavior of the signature canvas through the `options` parameter when initializing the `signature` class. This allows you to adjust properties such as width, height, color, line width, background color, border, and border radius.
 
 ```javascript
-const signature = new esignature('esignature', {
+const signature = new signature('signature', {
     // ...
     options: {
         width: '100%',
@@ -75,16 +75,16 @@ const signature = new esignature('esignature', {
 
 ### Manually Adding Canvas
 
-If you prefer to manually add a canvas element instead of using the default creation, you can provide a custom selector when initializing the `esignature` class to get more customization abilities.
+If you prefer to manually add a canvas element instead of using the default creation, you can provide a custom selector when initializing the `signature` class to get more customization abilities.
 
 ```html
-<input type="hidden" class="esignature">
-<canvas class="esignature_pad"></canvas>
+<input type="hidden" class="signature">
+<canvas class="signature_pad"></canvas>
 ```
 
 ```javascript
-const signature = new esignature('esignature', {
-    canvas: 'esignature_pad',
+const signature = new signature('signature', {
+    canvas: 'signature_pad',
     // ...
     options: {
         // ....
@@ -95,19 +95,19 @@ const signature = new esignature('esignature', {
 
 ### Providing Clear and Save Functionality
 
-You can specify buttons for clearing and saving the signature. Ensure that these buttons exist in your HTML and are correctly selected when initializing the `esignature` class. You can customize them as you wish.
+You can specify buttons for clearing and saving the signature. Ensure that these buttons exist in your HTML and are correctly selected when initializing the `signature` class. You can customize them as you wish.
 
 ```html
-<input type="hidden" class="esignature">
-<button class="esignature_clear">Clear</button>
-<button class="esignature_save">Save</button>
+<input type="hidden" class="signature">
+<button class="signature_clear">Clear</button>
+<button class="signature_save">Save</button>
 ```
 
 ```javascript
-const signature = new esignature('esignature', {
+const signature = new signature('signature', {
     // ...
-    clear: 'esignature_clear',
-    save: 'esignature_save',
+    clear: 'signature_clear',
+    save: 'signature_save',
     options: {
         // ....
     }
@@ -141,11 +141,11 @@ if (signature.isEmpty()) {
 
 ## License
 
-MIT License. See the [LICENSE](https://github.com/SalekurPolas/esignature/blob/master/LICENSE) file for more details.
+MIT License. See the [LICENSE](https://github.com/SalekurPolas/v-signature/blob/master/LICENSE) file for more details.
 
 ## Issues
 
-If you find a bug or have a feature request, please open an issue on [GitHub](https://github.com/SalekurPolas/esignature/issues/new).
+If you find a bug or have a feature request, please open an issue on [GitHub](https://github.com/SalekurPolas/v-signature/issues/new).
 
 
 ## Acknowledgments

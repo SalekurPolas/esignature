@@ -1,7 +1,7 @@
 {
   "name": "v-signature",
   "version": "1.0.0",
-  "description": "take on-screen signature",
+  "description": "take on-screen virtual signature",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -9,16 +9,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SalekurPolas/esignature.git"
+    "url": "git+https://github.com/SalekurPolas/v-signature.git"
   },
   "keywords": [
-    "esignature",
-    "signature"
+    "v-signature",
+    "signature",
+    "virtual"
   ],
   "author": "Salekur Rahaman",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SalekurPolas/esignature/issues"
+    "url": "https://github.com/SalekurPolas/v-signature/issues"
   },
-  "homepage": "https://github.com/SalekurPolas/esignature#readme"
+  "homepage": "https://github.com/SalekurPolas/v-signature#readme"
 }

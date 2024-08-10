@@ -1,4 +1,4 @@
-import ESignature from './src/esignature.js';
+import Signature from './src/signature.js';
 
 // exporting for ES6 modules
-export default ESignature;
+export default Signature;

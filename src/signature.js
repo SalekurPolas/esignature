@@ -1,5 +1,5 @@
-// src/esignature.js
-class ESignature {
+// src/signature.js
+class Signature {
     constructor(input, {
         canvas = null,
         clear = null,
@@ -213,5 +213,5 @@ class ESignature {
     }
 }
 
-// export ESignature class
-export default ESignature;
+// export Signature class
+export default Signature;
