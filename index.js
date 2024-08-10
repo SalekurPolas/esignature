@@ -1,4 +1,4 @@
-import Signature from './src/signature.js';
+import vSignature from './src/v-signature.js';
 
 // exporting for ES6 modules
-export default Signature;
+export default vSignature;

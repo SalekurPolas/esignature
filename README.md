@@ -18,7 +18,7 @@ npm install v-signature
 If your project uses ES Modules, you can import `v-signature` into your JavaScript files.
 
 ```javascript
-import signature from 'v-signature';
+import vSignature from 'v-signature';
 ```
 
 
@@ -27,7 +27,7 @@ import signature from 'v-signature';
 If your project uses CommonJS, you can require `v-signature` in your JavaScript files.
 
 ```javascript
-const signature = require('v-signature');
+const vSignature = require('v-signature');
 ```
 
 
@@ -46,19 +46,19 @@ const signature = require('v-signature');
 
 2. **Initialize signature**
 
-    Initialize the `signature` class by specifying the selectors for the input, canvas, clear button, and save button. You can also provide options to configure the appearance and behavior of the signature canvas.
+    Initialize the `vSignature` class by specifying the selectors for the input, canvas, clear button, and save button. You can also provide options to configure the appearance and behavior of the signature canvas.
 
     ```javascript
-    const signature = new signature('signature');
+    const signature = new vSignature('signature');
     ```
 
 
 ### Options
 
-You can customize the appearance and behavior of the signature canvas through the `options` parameter when initializing the `signature` class. This allows you to adjust properties such as width, height, color, line width, background color, border, and border radius.
+You can customize the appearance and behavior of the signature canvas through the `options` parameter when initializing the `vSignature` class. This allows you to adjust properties such as width, height, color, line width, background color, border, and border radius.
 
 ```javascript
-const signature = new signature('signature', {
+const signature = new vSignature('signature', {
     // ...
     options: {
         width: '100%',
@@ -75,7 +75,7 @@ const signature = new signature('signature', {
 
 ### Manually Adding Canvas
 
-If you prefer to manually add a canvas element instead of using the default creation, you can provide a custom selector when initializing the `signature` class to get more customization abilities.
+If you prefer to manually add a canvas element instead of using the default creation, you can provide a custom selector when initializing the `vSignature` class to get more customization abilities.
 
 ```html
 <input type="hidden" class="signature">
@@ -83,7 +83,7 @@ If you prefer to manually add a canvas element instead of using the default crea
 ```
 
 ```javascript
-const signature = new signature('signature', {
+const signature = new vSignature('signature', {
     canvas: 'signature_pad',
     // ...
     options: {
@@ -95,7 +95,7 @@ const signature = new signature('signature', {
 
 ### Providing Clear and Save Functionality
 
-You can specify buttons for clearing and saving the signature. Ensure that these buttons exist in your HTML and are correctly selected when initializing the `signature` class. You can customize them as you wish.
+You can specify buttons for clearing and saving the signature. Ensure that these buttons exist in your HTML and are correctly selected when initializing the `vSignature` class. You can customize them as you wish.
 
 ```html
 <input type="hidden" class="signature">
@@ -104,7 +104,7 @@ You can specify buttons for clearing and saving the signature. Ensure that these
 ```
 
 ```javascript
-const signature = new signature('signature', {
+const signature = new vSignature('signature', {
     // ...
     clear: 'signature_clear',
     save: 'signature_save',

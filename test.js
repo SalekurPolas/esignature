@@ -1,3 +1,3 @@
-import signature from './index.js';
+import vSignature from './index.js';
 
-console.log(signature);
+console.log(vSignature);
