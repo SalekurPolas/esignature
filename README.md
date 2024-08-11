@@ -19,6 +19,9 @@ If your project uses ES Modules, you can import `v-signature` into your JavaScri
 
 ```javascript
 import vSignature from 'v-signature';
+// ...
+
+window.vSignature = vSignature;
 ```
 
 
@@ -28,6 +31,8 @@ If your project uses CommonJS, you can require `v-signature` in your JavaScript 
 
 ```javascript
 const vSignature = require('v-signature');
+// ...
+window.vSignature = vSignature;
 ```
 
 
@@ -49,7 +54,9 @@ const vSignature = require('v-signature');
     Initialize the `vSignature` class by specifying the selectors for the input, canvas, clear button, and save button. You can also provide options to configure the appearance and behavior of the signature canvas.
 
     ```javascript
-    const signature = new vSignature('signature');
+    document.addEventListener('DOMContentLoaded', function() {
+        const signature = new vSignature('signature');
+    });
     ```
 
 
@@ -58,17 +65,19 @@ const vSignature = require('v-signature');
 You can customize the appearance and behavior of the signature canvas through the `options` parameter when initializing the `vSignature` class. This allows you to adjust properties such as width, height, color, line width, background color, border, and border radius.
 
 ```javascript
-const signature = new vSignature('signature', {
-    // ...
-    options: {
-        width: '100%',
-        height: '300px',
-        color: '#000000',
-        lineWidth: 2,
-        backgroundColor: '#f2f2f2',
-        border: '1px dashed #b3b3b3',
-        borderRadius: '5px',
-    }
+document.addEventListener('DOMContentLoaded', function() {
+    const signature = new vSignature('signature', {
+        // ...
+        options: {
+            width: '100%',
+            height: '300px',
+            color: '#000000',
+            lineWidth: 2,
+            backgroundColor: '#f2f2f2',
+            border: '1px dashed #b3b3b3',
+            borderRadius: '5px',
+        }
+    });
 });
 ```
 
@@ -83,12 +92,14 @@ If you prefer to manually add a canvas element instead of using the default crea
 ```
 
 ```javascript
-const signature = new vSignature('signature', {
-    canvas: 'signature_pad',
-    // ...
-    options: {
-        // ....
-    }
+document.addEventListener('DOMContentLoaded', function() {
+    const signature = new vSignature('signature', {
+        canvas: 'signature_pad',
+        // ...
+        options: {
+            // ....
+        }
+    });
 });
 ```
 
@@ -104,13 +115,15 @@ You can specify buttons for clearing and saving the signature. Ensure that these
 ```
 
 ```javascript
-const signature = new vSignature('signature', {
-    // ...
-    clear: 'signature_clear',
-    save: 'signature_save',
-    options: {
-        // ....
-    }
+document.addEventListener('DOMContentLoaded', function() {
+    const signature = new vSignature('signature', {
+        // ...
+        clear: 'signature_clear',
+        save: 'signature_save',
+        options: {
+            // ....
+        }
+    });
 });
 ```
 
