@@ -97,12 +97,18 @@ class vSignature {
         this.lastX = 0;
         this.lastY = 0;
 
-        // add event listeners
+        // add event listeners for mouse events
         this.canvasElement.addEventListener('mousedown', (e) => this.startDrawing(e));
         this.canvasElement.addEventListener('mousemove', (e) => this.draw(e));
         this.canvasElement.addEventListener('mouseup', () => this.stopDrawing());
         this.canvasElement.addEventListener('mouseleave', (e) => this.pauseDrawing(e));
         this.canvasElement.addEventListener('mouseenter', (e) => this.resumeDrawing(e));
+
+        // add event listeners for touch events with passive option
+        this.canvasElement.addEventListener('touchstart', (e) => this.startDrawing(e), { passive: true });
+        this.canvasElement.addEventListener('touchmove', (e) => this.draw(e), { passive: true });
+        this.canvasElement.addEventListener('touchend', () => this.stopDrawing(), { passive: true });
+        this.canvasElement.addEventListener('touchcancel', () => this.stopDrawing(), { passive: true });
 
         // add clear button event listener
         if (this.clearButton) {
@@ -116,12 +122,14 @@ class vSignature {
     }
 
     startDrawing(e) {
+        e.preventDefault();
         this.isDrawing = true;
         const position = this.pos(e);
         [this.lastX, this.lastY] = [position.x, position.y];
     }
 
     draw(e) {
+        e.preventDefault();
         if (!this.isDrawing) return;
 
         const position = this.pos(e);
@@ -187,11 +195,21 @@ class vSignature {
 
     pos(e) {
         const rect = this.canvasElement.getBoundingClientRect();
-        return {
-            x: (e.clientX - rect.left) * (this.canvasElement.width / rect.width),
-            y: (e.clientY - rect.top) * (this.canvasElement.height / rect.height)
-        };
+        let x, y;
+    
+        if (e.touches && e.touches.length > 0) {
+            // Handle touch events
+            x = (e.touches[0].clientX - rect.left) * (this.canvasElement.width / rect.width);
+            y = (e.touches[0].clientY - rect.top) * (this.canvasElement.height / rect.height);
+        } else {
+            // Handle mouse events
+            x = (e.clientX - rect.left) * (this.canvasElement.width / rect.width);
+            y = (e.clientY - rect.top) * (this.canvasElement.height / rect.height);
+        }
+    
+        return { x, y };
     }
+    
 
     on(event, callback) {
         if (event === 'change') {
