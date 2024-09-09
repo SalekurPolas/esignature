@@ -105,8 +105,8 @@ class vSignature {
         this.canvasElement.addEventListener('mouseenter', (e) => this.resumeDrawing(e));
 
         // add event listeners for touch events with passive option
-        this.canvasElement.addEventListener('touchstart', (e) => this.startDrawing(e), { passive: true });
-        this.canvasElement.addEventListener('touchmove', (e) => this.draw(e), { passive: true });
+        this.canvasElement.addEventListener('touchstart', (e) => this.startDrawing(e), { passive: false });
+        this.canvasElement.addEventListener('touchmove', (e) => this.draw(e), { passive: false });
         this.canvasElement.addEventListener('touchend', () => this.stopDrawing(), { passive: true });
         this.canvasElement.addEventListener('touchcancel', () => this.stopDrawing(), { passive: true });
 
